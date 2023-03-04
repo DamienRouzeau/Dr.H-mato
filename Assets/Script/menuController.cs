@@ -11,7 +11,7 @@ public class menuController : MonoBehaviour
     public GameObject tuto;
     void Start()
     {
-        
+        Screen.SetResolution(1920, 1080, false);
     }
 
     void Update()
@@ -22,6 +22,16 @@ public class menuController : MonoBehaviour
     public void start()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void fullscreen()
+    {
+        Screen.SetResolution(1920, 1080, FullScreenMode.ExclusiveFullScreen, 60);
+    }
+
+    public void windowed()
+    {
+        Screen.SetResolution(1920, 1080, false);
     }
 
     public void goOptions()
