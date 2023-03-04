@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         scalpelInHand.SetActive(false);
         marteauInHAnd.SetActive(false);
     }
@@ -67,7 +68,6 @@ public class PlayerController : MonoBehaviour
             var ishit = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, 1000f, interractableObject);
             if (ishit)
             {
-                
                 //hitinfo.transform.position = new Vector3(0.3f, -0.2f, 0.3f);
                 handEmpty= false;
                 if (hitinfo.collider.CompareTag("scalpel"))
@@ -129,43 +129,43 @@ public class PlayerController : MonoBehaviour
         {
             if (haveScalpel)
             {
-                var ishit = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, 1000f, interractableObject);
-                if (ishit && hitinfo.collider.CompareTag("organe"))
+                var organeTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
+                if (organeTargeted && hitinfo.collider.CompareTag("organe"))
                 {
-                    hitinfo.rigidbody.gameObject.SetActive(false);
-                    switch(hitinfo.rigidbody.name)
+                    hitinfo.transform.gameObject.SetActive(false);
+                    switch (hitinfo.rigidbody.name)
                     {
                         case "foie":
                             foiefixe = false;
-                            foie.SetActive(true);
+                            //foie.SetActive(true);
                             break;
                         case "intestin_grelle_retopo":
                             intestinfixe = false;
-                            intestin.SetActive(true);
+                            //intestin.SetActive(true);
                             break;
                         case "colon_low":
                             colonfixe = false;
-                            colon.SetActive(true);
+                            //colon.SetActive(true);
                             break;
                         case "heart":
                             coeurfixe = false;
-                            coeur.SetActive(true);
+                            //coeur.SetActive(true);
                             break;
                         case "estomac_V2":
                             estomacfixe = false;
-                            estomac.SetActive(true);
+                            //estomac.SetActive(true);
                             break;
                         case "rein_V2":
                             rein1fixe = false;
-                            rein1.SetActive(true);
+                            //rein1.SetActive(true);
                             break;
                         case "rein_V2 (1)":
                             rein2fixe = false;
-                            rein2.SetActive(true);
+                            //rein2.SetActive(true);
                             break;
                         case "poumon_unt":
                             poumousfixe = false;
-                            poumous.SetActive(true);
+                            //poumous.SetActive(true);
                             break;
                         default: break;
                     }
@@ -175,7 +175,7 @@ public class PlayerController : MonoBehaviour
                     scalpelInHand.SetActive(false);
                     haveScalpel = false;
                     itemInHand.SetActive(true);
-                    itemInHand.transform.position = transform.position;
+                    //itemInHand.transform.position = transform.position;
                     handEmpty = true;
                 }
             }
@@ -184,8 +184,6 @@ public class PlayerController : MonoBehaviour
                 marteauInHAnd.SetActive(false);
                 haveMarteau= false;
             }
-            
-            
         }
     }
 }
