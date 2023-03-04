@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     float chrono = 60;
-    float phaseflou1 = 45, phaseflou2 = 30, phaseflou3 = 15;
+    //float phaseflou1 = 45, phaseflou2 = 30, phaseflou3 = 15;
     public Text chronoText;
     public Animator animationFlou;
     // Start is called before the first frame update
