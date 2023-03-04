@@ -14,14 +14,9 @@ public class menuController : MonoBehaviour
         Screen.SetResolution(1920, 1080, false);
     }
 
-    void Update()
-    {
-        
-    }
-
     public void start()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Cabinet");
     }
 
     public void fullscreen()
