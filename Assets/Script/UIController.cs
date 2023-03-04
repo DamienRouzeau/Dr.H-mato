@@ -25,8 +25,8 @@ public class UIController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*chrono -= Time.deltaTime;
-        if (chrono < phaseflou1) animationFlou.SetTrigger("flou");
+        chrono -= Time.deltaTime;
+        /*if (chrono < phaseflou1) animationFlou.SetTrigger("flou");
         if (chrono < phaseflou2) animationFlou.SetTrigger("flou");
         if (chrono < phaseflou3) animationFlou.SetTrigger("flou");*/
     }
