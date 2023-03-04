@@ -9,9 +9,11 @@ public class menuController : MonoBehaviour
     public GameObject menu;
     public GameObject option;
     public GameObject tuto;
+    public Animator animator;
     void Start()
     {
         Screen.SetResolution(1920, 1080, false);
+        animator = GetComponent<Animator>();
     }
 
     public void start()
@@ -31,14 +33,12 @@ public class menuController : MonoBehaviour
 
     public void goOptions()
     {
-        menu.SetActive(false);
-        option.SetActive(true);
+        animator.SetTrigger("option");
     }
 
     public void OtoM()
     {
-        menu.SetActive(true);
-        option.SetActive(false);
+        animator.SetTrigger("optionMenu");
     }
 
     public void goTuto()
