@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Animations;
 
 public class PlayerController : MonoBehaviour
 {
     //public GameObject Item;
     public CheckLookAt lookAt;
+    public Transform playerCam;
+    bool canTakeItem;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,6 @@ public class PlayerController : MonoBehaviour
 
     void OnClic()
     {
-        Instantiate(lookAt, transform.position, transform.rotation);
+        //CinemachineVirtualCamera.Instantiate(lookAt, transform.position, transform.rotation);
     }
 }
