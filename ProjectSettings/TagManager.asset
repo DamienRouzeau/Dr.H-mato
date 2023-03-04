@@ -7,6 +7,8 @@ TagManager:
   - Item
   - scalpel
   - marteau
+  - organe
+  - os
   layers:
   - Default
   - TransparentFX

@@ -15,8 +15,18 @@ public class PlayerController : MonoBehaviour
     bool haveScalpel, haveMarteau;
     bool canTakeItem;
     GameObject itemInHand;
-    
-    
+
+    //Organes
+    public GameObject foie;
+    public GameObject intestin;
+    public GameObject colon;
+    public GameObject coeur;
+    public GameObject estomac;
+    public GameObject rein1;
+    public GameObject rein2;
+    public GameObject poumous;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,8 +70,16 @@ public class PlayerController : MonoBehaviour
         {
             if (haveScalpel)
             {
-                scalpelInHand.SetActive(false);
-                haveScalpel= false;
+                var ishit = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, 1000f, interractableObject);
+                if (ishit && hitinfo.collider.CompareTag("organe"))
+                {
+                    hitinfo.rigidbody.gameObject.SetActive(false);
+                }
+                else
+                {
+                    scalpelInHand.SetActive(false);
+                    haveScalpel = false;
+                }
             }
             else if (haveMarteau)
             {
