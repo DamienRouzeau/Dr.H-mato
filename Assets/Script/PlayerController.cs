@@ -6,11 +6,20 @@ using UnityEngine.Animations;
 
 public class PlayerController : MonoBehaviour
 {
-    //public GameObject Item;
-    public CheckLookAt lookAt;
     public Transform playerCam;
     public LayerMask interractableObject;
     RaycastHit hitinfo;
+    public float sensitivityX = 8f;
+    public float sensitivityY = 0.5f;
+    float mouseX, mouseY;
+    Vector2 mouseInput;
+
+    public void ReceiveInput (Vector2 mouseInput)
+    {
+        mouseX = mouseInput.x * sensitivityX;
+        mouseY = mouseInput.y * sensitivityY;
+    }
+
 
 
 
@@ -25,7 +34,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(Vector3.up, mouseX * Time.deltaTime);
+        ReceiveInput(mouseInput);
     }
 
     void OnClic()
