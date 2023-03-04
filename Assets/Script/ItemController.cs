@@ -15,7 +15,7 @@ public class ItemController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dist = Vector3.Distance(transform.position, player.position);
+        /*float dist = Vector3.Distance(transform.position, player.position);
 
         if (dist <= 50f)
         {
@@ -59,6 +59,6 @@ public class ItemController : MonoBehaviour
         if(isPicked)
         {
             isTouched= true;
-        }
+        }*/
     }
 }
