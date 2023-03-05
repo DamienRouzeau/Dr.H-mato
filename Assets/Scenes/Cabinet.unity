@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2720,6 +2720,14 @@ MonoBehaviour:
   rein1InHand: {fileID: 867394601}
   rein2InHand: {fileID: 311278729}
   poumousInHand: {fileID: 342254585}
+  foieInHandBool: 0
+  intestinInHandBool: 0
+  colonInHandBool: 0
+  coeurInHandBool: 0
+  estomacInHandBool: 0
+  rein1InHandBool: 0
+  rein2InHandBool: 0
+  poumousInHandBool: 0
   foieClean: {fileID: 962330342}
   intestinClean: {fileID: 1630309658}
   colonClean: {fileID: 470161918}
@@ -2728,6 +2736,14 @@ MonoBehaviour:
   rein1Clean: {fileID: 1558496968}
   rein2Clean: {fileID: 892100295}
   poumousClean: {fileID: 2103296913}
+  foieTrigger: {fileID: 564252930}
+  intestinTrigger: {fileID: 19155162}
+  colonTrigger: {fileID: 1833017888}
+  coeurTrigger: {fileID: 854924985}
+  estomacTrigger: {fileID: 795292277}
+  rein1Trigger: {fileID: 39856908}
+  rein2Trigger: {fileID: 1649464772}
+  poumousTrigger: {fileID: 935570393}
   foiefixe: 1
   intestinfixe: 1
   colonfixe: 1
