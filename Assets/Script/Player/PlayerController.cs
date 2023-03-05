@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public GameObject foie;
     public GameObject intestin;
     public GameObject colon;
-    public GameObject coeur;
+    public GameObject coeur, beauCoeur;
     public GameObject estomac;
     public GameObject rein1;
     public GameObject rein2;
@@ -76,11 +76,13 @@ public class PlayerController : MonoBehaviour
     public bool rein2fixe = true;
     public bool poumousfixe = true;
 
+    [SerializeField] int organeChanged = 0;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
 
         scalpelInHand.SetActive(false);
         marteauInHAnd.SetActive(false);
@@ -100,6 +102,7 @@ public class PlayerController : MonoBehaviour
         foieTrigger.SetActive(false);
         intestinTrigger.SetActive(false);
         estomacTrigger.SetActive(false);
+        beauCoeur.SetActive(false);
 
     }
 
@@ -149,47 +152,55 @@ public class PlayerController : MonoBehaviour
                     switch (hitinfo.collider.name)
                     {
                         case "foie":
+                            foieTrigger.SetActive(true);
                             foieClean.SetActive(false);
                             foieInHand.SetActive(true);
                             foieInHandBool = true;
                             break;
                         case "intestin_grelle_retopo":
+                            intestinTrigger.SetActive(true);
                             intestinClean.SetActive(false);
                             intestinInHand.SetActive(true);
                             intestinInHandBool = true;
 
                             break;
                         case "colon_low":
+                            colonTrigger.SetActive(true);
                             colonClean.SetActive(false);
                             colonInHand.SetActive(true);
                             colonInHandBool = true;
 
                             break;
                         case "heart":
+                            coeurTrigger.SetActive(true);
                             coeurClean.SetActive(false);
                             coeurInHand.SetActive(true);
                             coeurInHandBool = true;
 
                             break;
                         case "estomac_V2":
+                            estomacTrigger.SetActive(true);
                             estomacClean.SetActive(false);
                             estomacInHand.SetActive(true);
                             estomacInHandBool = true;
 
                             break;
                         case "rein_V2":
+                            rein1Trigger.SetActive(true);
                             rein1Clean.SetActive(false);
                             rein1InHand.SetActive(true);
                             rein1InHandBool = true;
 
                             break;
                         case "rein_V2 (1)":
+                            rein2Trigger.SetActive(true);
                             rein2Clean.SetActive(false);
                             rein2InHand.SetActive(true);
                             rein2InHandBool = true;
 
                             break;
                         case "poumon_unt":
+                            poumousTrigger.SetActive(true);
                             poumousClean.SetActive(false);
                             poumousInHand.SetActive(true);
                             poumousInHandBool = true;
@@ -231,14 +242,8 @@ public class PlayerController : MonoBehaviour
                         default: break;
                     }
                 }
-                else if (hitinfo.collider.CompareTag("poumonTrigger") && poumousInHandBool)
-                {
-                    
-                }
 
-
-
-
+                
             }
         }
         else
@@ -300,6 +305,112 @@ public class PlayerController : MonoBehaviour
                 marteauInHAnd.SetActive(false);
                 haveMarteau= false;
             }
+
+                /*
+                 * 
+                 *              REPLACE ORGANES
+                 * 
+                 */
+
+            else if (poumousInHandBool)
+            {
+                var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
+                if (zoneTargeted && hitinfo.collider.CompareTag("poumonTrigger"))
+                {
+                    poumous.SetActive(true);
+                    poumousInHand.SetActive(false);
+                    poumousTrigger.SetActive(false);
+                    poumousInHandBool = false;
+                    organeChanged += 1;
+                }
+                
+            }
+            else if (hitinfo.collider.CompareTag("foieTrigger") && foieInHandBool)
+            {
+                var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
+                if (zoneTargeted && hitinfo.collider.CompareTag("foieTrigger"))
+                {
+                    foie.SetActive(true);
+                    foieInHand.SetActive(false);
+                    foieTrigger.SetActive(false);
+                    foieInHandBool= false;
+                    organeChanged += 1;
+                }
+            }
+            else if (hitinfo.collider.CompareTag("rein1Trigger") && rein1InHandBool)
+            {
+                var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
+                if (zoneTargeted && hitinfo.collider.CompareTag("rein1Trigger"))
+                {
+                    rein1.SetActive(true);
+                    rein1InHand.SetActive(false);
+                    rein1Trigger.SetActive(false);
+                    rein1InHandBool= false;
+                    organeChanged += 1;
+                }
+            }
+            else if (hitinfo.collider.CompareTag("rein2Trigger") && rein2InHandBool)
+            {
+                var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
+                if (zoneTargeted && hitinfo.collider.CompareTag("rein2Trigger"))
+                {
+                    rein2.SetActive(true);
+                    rein2InHand.SetActive(false);
+                    rein2Trigger.SetActive(false);
+                    rein2InHandBool= false;
+                    organeChanged += 1;
+                }
+            }
+            else if (hitinfo.collider.CompareTag("estomacTrigger") && estomacInHandBool)
+            {
+                var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
+                if (zoneTargeted && hitinfo.collider.CompareTag("estomacTrigger"))
+                {
+                    estomac.SetActive(true);
+                    estomacInHand.SetActive(false);
+                    estomacTrigger.SetActive(false);
+                    estomacInHandBool= false;
+                    organeChanged += 1;
+                }
+            }
+            else if (hitinfo.collider.CompareTag("intestinTrigger") && intestinInHandBool)
+            {
+                var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
+                if (zoneTargeted && hitinfo.collider.CompareTag("intestinTrigger"))
+                {
+                    intestin.SetActive(true);
+                    intestinInHand.SetActive(false);
+                    intestinTrigger.SetActive(false);
+                    intestinInHandBool= false;
+                    organeChanged += 1;
+                }
+            }
+
+            else if (hitinfo.collider.CompareTag("colonTrigger") && colonInHandBool)
+            {
+                var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
+                if (zoneTargeted && hitinfo.collider.CompareTag("colonTrigger"))
+                {
+                    colon.SetActive(true);
+                    colonInHand.SetActive(false);
+                    colonTrigger.SetActive(false);
+                    colonInHandBool= false;
+                    organeChanged += 1;
+                }
+            }
+            else if (hitinfo.collider.CompareTag("coeurTrigger") && coeurInHandBool)
+            {
+                var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
+                if (zoneTargeted && hitinfo.collider.CompareTag("coeurTrigger"))
+                {
+                    beauCoeur.SetActive(true);
+                    coeurInHand.SetActive(false);
+                    coeurTrigger.SetActive(false);
+                    coeurInHandBool = false;
+                    organeChanged += 1;
+                }
+            }
+
             else
             {
                 switch (hitinfo.collider.name)
@@ -350,7 +461,16 @@ public class PlayerController : MonoBehaviour
                 organeInHand = false;
 
                 handEmpty = true;
+                foieTrigger.SetActive(false);
+                intestinTrigger.SetActive(false);
+                colonTrigger.SetActive(false);
+                estomacTrigger.SetActive(false);
+                rein1Trigger.SetActive(false);
+                rein2Trigger.SetActive(false);
+                poumousTrigger.SetActive(false);
+                coeurTrigger.SetActive(false);
             }
+
         }
     }
 }

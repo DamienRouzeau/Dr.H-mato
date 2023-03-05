@@ -2707,7 +2707,8 @@ MonoBehaviour:
   foie: {fileID: 2030831411}
   intestin: {fileID: 197599848}
   colon: {fileID: 1926525357}
-  coeur: {fileID: 0}
+  coeur: {fileID: 1810993094}
+  beauCoeur: {fileID: 464837246567930041}
   estomac: {fileID: 1736026774}
   rein1: {fileID: 1151566692}
   rein2: {fileID: 1199956057}
@@ -4989,6 +4990,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8127824900034445863, guid: a7131b1f40e566146b30a09707f69ac0, type: 3}
+--- !u!1 &1810993094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4881811340352059020, guid: fbf88f9c15d68a740a0f7dc3fb8e9f0f, type: 3}
+  m_PrefabInstance: {fileID: 464837246567930040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1822049386 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5166852528199341110, guid: 18e03c13627a48d4081bfe78f9f61da6, type: 3}
@@ -6037,6 +6043,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf88f9c15d68a740a0f7dc3fb8e9f0f, type: 3}
+--- !u!1 &464837246567930041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3084972545067244804, guid: fbf88f9c15d68a740a0f7dc3fb8e9f0f, type: 3}
+  m_PrefabInstance: {fileID: 464837246567930040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4629385419136546740
 PrefabInstance:
   m_ObjectHideFlags: 0
