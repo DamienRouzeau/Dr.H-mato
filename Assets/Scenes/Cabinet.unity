@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 19155163}
   - component: {fileID: 19155164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: intestin
   m_TagString: intestinTrigger
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 39856909}
   - component: {fileID: 39856910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rein1
   m_TagString: rein1Trigger
   m_Icon: {fileID: 0}
@@ -322,10 +322,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.07627046
+  m_Radius: 0.112629235
   m_Height: 0.3245067
   m_Direction: 2
-  m_Center: {x: 0.11356008, y: -0.078421354, z: 0.073640734}
+  m_Center: {x: -0.1, y: -0.04206258, z: 0.073640734}
 --- !u!1 &41171460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b5ccebd53962ca74196de63136e4b69c, type: 3}
       propertyPath: m_Name
-      value: rein_V2 (1)
+      value: rein_V22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5ccebd53962ca74196de63136e4b69c, type: 3}
@@ -2028,7 +2028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564252931}
   - component: {fileID: 564252932}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: foie
   m_TagString: foieTrigger
   m_Icon: {fileID: 0}
@@ -2962,15 +2962,15 @@ MonoBehaviour:
     m_Bits: 64
   scalpelInHand: {fileID: 488433072}
   marteauInHAnd: {fileID: 41171460}
-  foie: {fileID: 2030831411}
+  foie: {fileID: 679756439}
   intestin: {fileID: 197599848}
   colon: {fileID: 1926525357}
   coeur: {fileID: 1810993094}
   beauCoeur: {fileID: 464837246567930041}
-  estomac: {fileID: 1736026774}
-  rein1: {fileID: 1151566692}
-  rein2: {fileID: 1199956057}
-  poumous: {fileID: 12316590}
+  estomac: {fileID: 1121417128}
+  rein1: {fileID: 1375641258}
+  rein2: {fileID: 315104384}
+  poumous: {fileID: 1751752552}
   foieInHand: {fileID: 1240222362}
   intestinInHand: {fileID: 296134805}
   colonInHand: {fileID: 1627053044}
@@ -3011,6 +3011,7 @@ MonoBehaviour:
   rein1fixe: 1
   rein2fixe: 1
   poumousfixe: 1
+  organeChanged: 0
 --- !u!95 &730826617
 Animator:
   serializedVersion: 4
@@ -3191,7 +3192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 795292278}
   - component: {fileID: 795292279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: estomac
   m_TagString: estomacTrigger
   m_Icon: {fileID: 0}
@@ -3494,7 +3495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854924986}
   - component: {fileID: 854924987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: coeur
   m_TagString: coeurTrigger
   m_Icon: {fileID: 0}
@@ -3991,7 +3992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 935570394}
   - component: {fileID: 935570395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: poumons
   m_TagString: poumonTrigger
   m_Icon: {fileID: 0}
@@ -4209,11 +4210,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7501663176356790747, guid: b98620ced9ba3b846a7a587b52e5f1b3, type: 3}
---- !u!1 &1151566692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5164971222962515752, guid: fbf88f9c15d68a740a0f7dc3fb8e9f0f, type: 3}
-  m_PrefabInstance: {fileID: 464837246567930040}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1155216014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4376,11 +4372,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176820622}
   m_CullTransparentMesh: 1
---- !u!1 &1199956057 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 953953773380707134, guid: fbf88f9c15d68a740a0f7dc3fb8e9f0f, type: 3}
-  m_PrefabInstance: {fileID: 464837246567930040}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1207557517
 GameObject:
   m_ObjectHideFlags: 0
@@ -5525,9 +5516,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1649464773}
   - component: {fileID: 1649464774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rein2
-  m_TagString: Untagged
+  m_TagString: rein2Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5557,10 +5548,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.07627046
+  m_Radius: 0.09250569
   m_Height: 0.3245067
   m_Direction: 2
-  m_Center: {x: 0.11356008, y: -0.078421354, z: 0.073640734}
+  m_Center: {x: 0.3062352, y: -0.078421354, z: 0.073640734}
 --- !u!4 &1669741768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 25320a7d27ed75a4c8b19e6709799267, type: 3}
@@ -5722,11 +5713,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 040e63694835e1f49bf67922d8648d1c, type: 3}
   m_PrefabInstance: {fileID: 1216225005}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1736026774 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4297981013419915999, guid: fbf88f9c15d68a740a0f7dc3fb8e9f0f, type: 3}
-  m_PrefabInstance: {fileID: 464837246567930040}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1738780909
 GameObject:
   m_ObjectHideFlags: 0
@@ -5871,7 +5857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1833017889}
   - component: {fileID: 1833017890}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: colon
   m_TagString: colonTrigger
   m_Icon: {fileID: 0}
@@ -6523,11 +6509,6 @@ Transform:
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2030831411 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1493400327953506237, guid: fbf88f9c15d68a740a0f7dc3fb8e9f0f, type: 3}
-  m_PrefabInstance: {fileID: 464837246567930040}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2065813199
 PrefabInstance:
   m_ObjectHideFlags: 0

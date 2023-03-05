@@ -309,23 +309,27 @@ public class PlayerController : MonoBehaviour
                     poumousInHand.SetActive(false);
                     poumousTrigger.SetActive(false);
                     poumousInHandBool = false;
+                    handEmpty = true;
+
                     organeChanged += 1;
                 }
                 
             }
-            else if (hitinfo.collider.CompareTag("foieTrigger") && foieInHandBool)
+            else if (foieInHandBool)
             {
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
-                if (zoneTargeted && hitinfo.collider.CompareTag("foieTrigger"))
+                if (hitinfo.collider.CompareTag("foieTrigger"))
                 {
                     foie.SetActive(true);
                     foieInHand.SetActive(false);
                     foieTrigger.SetActive(false);
                     foieInHandBool= false;
+                    handEmpty = true;
+
                     organeChanged += 1;
                 }
             }
-            else if (hitinfo.collider.CompareTag("rein1Trigger") && rein1InHandBool)
+            else if ( rein1InHandBool)
             {
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("rein1Trigger"))
@@ -334,10 +338,12 @@ public class PlayerController : MonoBehaviour
                     rein1InHand.SetActive(false);
                     rein1Trigger.SetActive(false);
                     rein1InHandBool= false;
+                    handEmpty = true;
+
                     organeChanged += 1;
                 }
             }
-            else if (hitinfo.collider.CompareTag("rein2Trigger") && rein2InHandBool)
+            else if (rein2InHandBool)
             {
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("rein2Trigger"))
@@ -346,10 +352,12 @@ public class PlayerController : MonoBehaviour
                     rein2InHand.SetActive(false);
                     rein2Trigger.SetActive(false);
                     rein2InHandBool= false;
+                    handEmpty = true;
+
                     organeChanged += 1;
                 }
             }
-            else if (hitinfo.collider.CompareTag("estomacTrigger") && estomacInHandBool)
+            else if (estomacInHandBool)
             {
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("estomacTrigger"))
@@ -358,10 +366,12 @@ public class PlayerController : MonoBehaviour
                     estomacInHand.SetActive(false);
                     estomacTrigger.SetActive(false);
                     estomacInHandBool= false;
+                    handEmpty = true;
+
                     organeChanged += 1;
                 }
             }
-            else if (hitinfo.collider.CompareTag("intestinTrigger") && intestinInHandBool)
+            else if (intestinInHandBool)
             {
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("intestinTrigger"))
@@ -370,11 +380,13 @@ public class PlayerController : MonoBehaviour
                     intestinInHand.SetActive(false);
                     intestinTrigger.SetActive(false);
                     intestinInHandBool= false;
+                    handEmpty = true;
+
                     organeChanged += 1;
                 }
             }
 
-            else if (hitinfo.collider.CompareTag("colonTrigger") && colonInHandBool)
+            else if (colonInHandBool)
             {
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("colonTrigger"))
@@ -383,10 +395,12 @@ public class PlayerController : MonoBehaviour
                     colonInHand.SetActive(false);
                     colonTrigger.SetActive(false);
                     colonInHandBool= false;
+                    handEmpty = true;
+
                     organeChanged += 1;
                 }
             }
-            else if (hitinfo.collider.CompareTag("coeurTrigger") && coeurInHandBool)
+            else if (coeurInHandBool)
             {
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("coeurTrigger"))
@@ -395,6 +409,8 @@ public class PlayerController : MonoBehaviour
                     coeurInHand.SetActive(false);
                     coeurTrigger.SetActive(false);
                     coeurInHandBool = false;
+                    handEmpty = true;
+
                     organeChanged += 1;
                 }
             }
