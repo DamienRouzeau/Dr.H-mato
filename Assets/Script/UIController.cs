@@ -20,6 +20,7 @@ public class UIController : MonoBehaviour
     public AudioSource tombe, win;
     public PlayerController playerController;
     public GameObject defeat;
+    public GameObject victory;
 
     void Start()
     {
@@ -29,9 +30,6 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-
-
-
         //Lose
         string text = chrono.ToString();
         string number = text.Substring(0, 2);
@@ -91,6 +89,7 @@ public class UIController : MonoBehaviour
 
     public void Win()
     {
+        victory.SetActive(true);
         win.Play();
 
     }
