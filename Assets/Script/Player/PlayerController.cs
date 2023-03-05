@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     GameObject itemInHand;
     bool organeInHand = false;
 
+    public AudioSource organeSound, takeScalpelSound, dropScalpelSound;
+
     //Organes
     public GameObject foie;
     public GameObject intestin;
@@ -123,6 +125,7 @@ public class PlayerController : MonoBehaviour
                 {
                     scalpelInHand.SetActive(true);
                     haveScalpel= true;
+                    takeScalpelSound.Play();
                     itemInHand = hitinfo.rigidbody.gameObject;
                     itemInHand.SetActive(false);
                 }
@@ -137,6 +140,7 @@ public class PlayerController : MonoBehaviour
 
                 else if (hitinfo.collider.CompareTag("cleanOrganes"))
                 {
+                    organeSound.Play();
                     switch (hitinfo.collider.name)
                     {
                         case "foie":
@@ -201,6 +205,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (hitinfo.collider.CompareTag("organe"))
                 {
+                    organeSound.Play();
                     switch (hitinfo.rigidbody.name)
                     {
                         case "foie":
@@ -230,8 +235,6 @@ public class PlayerController : MonoBehaviour
                         default: break;
                     }
                 }
-
-                
             }
         }
         else
@@ -241,6 +244,7 @@ public class PlayerController : MonoBehaviour
                 var organeTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (organeTargeted && hitinfo.collider.CompareTag("organe"))
                 {
+                    organeSound.Play();
                     hitinfo.transform.gameObject.SetActive(false);
                     /*switch (hitinfo.rigidbody.name)
                     {
@@ -282,6 +286,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     scalpelInHand.SetActive(false);
+                    dropScalpelSound.Play();
                     haveScalpel = false;
                     itemInHand.SetActive(true);
                     //itemInHand.transform.position = transform.position;
@@ -305,6 +310,7 @@ public class PlayerController : MonoBehaviour
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("poumonTrigger"))
                 {
+                    organeSound.Play();
                     poumous.SetActive(true);
                     poumousInHand.SetActive(false);
                     poumousTrigger.SetActive(false);
@@ -320,6 +326,7 @@ public class PlayerController : MonoBehaviour
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (hitinfo.collider.CompareTag("foieTrigger"))
                 {
+                    organeSound.Play();
                     foie.SetActive(true);
                     foieInHand.SetActive(false);
                     foieTrigger.SetActive(false);
@@ -334,6 +341,7 @@ public class PlayerController : MonoBehaviour
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("rein1Trigger"))
                 {
+                    organeSound.Play();
                     rein1.SetActive(true);
                     rein1InHand.SetActive(false);
                     rein1Trigger.SetActive(false);
@@ -348,6 +356,7 @@ public class PlayerController : MonoBehaviour
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("rein2Trigger"))
                 {
+                    organeSound.Play();
                     rein2.SetActive(true);
                     rein2InHand.SetActive(false);
                     rein2Trigger.SetActive(false);
@@ -362,6 +371,7 @@ public class PlayerController : MonoBehaviour
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("estomacTrigger"))
                 {
+                    organeSound.Play();
                     estomac.SetActive(true);
                     estomacInHand.SetActive(false);
                     estomacTrigger.SetActive(false);
@@ -376,6 +386,7 @@ public class PlayerController : MonoBehaviour
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("intestinTrigger"))
                 {
+                    organeSound.Play();
                     intestin.SetActive(true);
                     intestinInHand.SetActive(false);
                     intestinTrigger.SetActive(false);
@@ -391,6 +402,7 @@ public class PlayerController : MonoBehaviour
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("colonTrigger"))
                 {
+                    organeSound.Play();
                     colon.SetActive(true);
                     colonInHand.SetActive(false);
                     colonTrigger.SetActive(false);
@@ -405,6 +417,7 @@ public class PlayerController : MonoBehaviour
                 var zoneTargeted = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitinfo, Mathf.Infinity, interractableObject);
                 if (zoneTargeted && hitinfo.collider.CompareTag("coeurTrigger"))
                 {
+                    organeSound.Play();
                     beauCoeur.SetActive(true);
                     coeurInHand.SetActive(false);
                     coeurTrigger.SetActive(false);
@@ -474,7 +487,6 @@ public class PlayerController : MonoBehaviour
                 poumousTrigger.SetActive(false);
                 coeurTrigger.SetActive(false);
             }
-
         }
     }
 }
