@@ -231,8 +231,10 @@ public class PlayerController : MonoBehaviour
                         default: break;
                     }
                 }
-                else if (hitinfo.collider.CompareTag("poumouTrigger") )
-                { }
+                else if (hitinfo.collider.CompareTag("poumonTrigger") && poumousInHandBool)
+                {
+                    
+                }
 
 
 
@@ -305,34 +307,43 @@ public class PlayerController : MonoBehaviour
                     case "foie":
                         foieClean.SetActive(true);
                         foieInHand.SetActive(false);
+                        foieInHandBool = false;
                         break;
                     case "intestin_grelle_retopo":
                         intestinClean.SetActive(true);
                         intestinInHand.SetActive(false);
+                        intestinInHandBool = false;
+
                         break;
                     case "colon_low":
                         colonClean.SetActive(true);
                         colonInHand.SetActive(false);
+                        colonInHandBool = false;
                         break;
                     case "heart":
                         coeurClean.SetActive(true);
                         coeurInHand.SetActive(false);
+                        coeurInHandBool = false;
                         break;
                     case "estomac_V2":
                         estomacClean.SetActive(true);
                         estomacInHand.SetActive(false);
+                        estomacInHandBool = false;
                         break;
                     case "rein_V2":
                         rein1Clean.SetActive(true);
                         rein1InHand.SetActive(false);
+                        rein1InHandBool = false;
                         break;
                     case "rein_V2 (1)":
                         rein2Clean.SetActive(true);
                         rein2InHand.SetActive(false);
+                        rein2InHandBool = false;
                         break;
                     case "poumon_unt":
                         poumousClean.SetActive(true);
                         poumousInHand.SetActive(false);
+                        poumousInHandBool = false;
                         break;
                     default: break;
                 }
