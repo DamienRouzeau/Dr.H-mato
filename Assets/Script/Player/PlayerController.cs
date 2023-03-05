@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     bool haveScalpel, haveMarteau;
     bool canTakeItem;
     GameObject itemInHand;
+    bool organeInHand = false;
 
     //Organes
     public GameObject foie;
@@ -36,6 +37,16 @@ public class PlayerController : MonoBehaviour
     public GameObject rein2InHand;
     public GameObject poumousInHand;
 
+    //Organes clean
+    public GameObject foieClean;
+    public GameObject intestinClean;
+    public GameObject colonClean;
+    public GameObject coeurClean;
+    public GameObject estomacClean;
+    public GameObject rein1Clean;
+    public GameObject rein2Clean;
+    public GameObject poumousClean;
+
     //Organes fixés
     public bool foiefixe = true;
     public bool intestinfixe = true;
@@ -53,10 +64,24 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         scalpelInHand.SetActive(false);
         marteauInHAnd.SetActive(false);
+        coeurInHand.SetActive(false);
+        poumousInHand.SetActive(false);
+        rein1InHand.SetActive(false);
+        rein2InHand.SetActive(false);
+        colonInHand.SetActive(false);
+        foieInHand.SetActive(false);
+        intestinInHand.SetActive(false);
+        estomacInHand.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
+    {
+
+    }
+
+    public void Loose()
     {
 
     }
@@ -84,41 +109,77 @@ public class PlayerController : MonoBehaviour
                     itemInHand = hitinfo.rigidbody.gameObject;
                     itemInHand.SetActive(false);
                 }
+
+
+                else if (hitinfo.collider.CompareTag("cleanOrganes"))
+                {
+                    switch (hitinfo.collider.name)
+                    {
+                        case "foie":
+                            print("test");
+                            foieClean.SetActive(false);
+                            foieInHand.SetActive(true);
+                            break;
+                        case "intestin_grelle_retopo":
+                            intestinClean.SetActive(false);
+                            intestinInHand.SetActive(true);
+                            break;
+                        case "colon_low":
+                            colonClean.SetActive(false);
+                            colonInHand.SetActive(true);
+                            break;
+                        case "heart":
+                            coeurClean.SetActive(false);
+                            coeurInHand.SetActive(true);
+                            break;
+                        case "estomac_V2":
+                            estomacClean.SetActive(false);
+                            estomacInHand.SetActive(true);
+                            break;
+                        case "rein_V2":
+                            rein1Clean.SetActive(false);
+                            rein1InHand.SetActive(true);
+                            break;
+                        case "rein_V2 (1)":
+                            rein2Clean.SetActive(false);
+                            rein2InHand.SetActive(true);
+                            break;
+                        case "poumon_unt":
+                            poumousClean.SetActive(false);
+                            poumousInHand.SetActive(true);
+                            break;
+                        default: break;
+                    }
+                    itemInHand = hitinfo.collider.gameObject;
+                    organeInHand = true;
+                }
                 else if (hitinfo.collider.CompareTag("organe"))
                 {
                     switch (hitinfo.rigidbody.name)
                     {
                         case "foie":
                             foie.SetActive(false);
-                            foieInHand.SetActive(true);
                             break;
                         case "intestin_grelle_retopo":
                             intestin.SetActive(false);
-                            intestinInHand.SetActive(true);
                             break;
                         case "colon_low":
                             colon.SetActive(false);
-                            colonInHand.SetActive(true);
                             break;
                         case "heart":
                             coeur.SetActive(false);
-                            coeurInHand.SetActive(true);
                             break;
                         case "estomac_V2":
                             estomac.SetActive(false);
-                            estomacInHand.SetActive(true);
                             break;
                         case "rein_V2":
                             rein1.SetActive(false);
-                            rein1InHand.SetActive(true);
                             break;
                         case "rein_V2 (1)":
                             rein2.SetActive(false);
-                            rein2InHand.SetActive(true);
                             break;
                         case "poumon_unt":
                             poumous.SetActive(false);
-                            poumousInHand.SetActive(true);
                             break;
                         default: break;
                     }
@@ -133,7 +194,7 @@ public class PlayerController : MonoBehaviour
                 if (organeTargeted && hitinfo.collider.CompareTag("organe"))
                 {
                     hitinfo.transform.gameObject.SetActive(false);
-                    switch (hitinfo.rigidbody.name)
+                    /*switch (hitinfo.rigidbody.name)
                     {
                         case "foie":
                             foiefixe = false;
@@ -168,7 +229,7 @@ public class PlayerController : MonoBehaviour
                             //poumous.SetActive(true);
                             break;
                         default: break;
-                    }
+                    }*/
                 }
                 else
                 {
@@ -183,6 +244,48 @@ public class PlayerController : MonoBehaviour
             {
                 marteauInHAnd.SetActive(false);
                 haveMarteau= false;
+            }
+            else
+            {
+                switch (hitinfo.collider.name)
+                {
+                    case "foie":
+                        foieClean.SetActive(true);
+                        foieInHand.SetActive(false);
+                        break;
+                    case "intestin_grelle_retopo":
+                        intestinClean.SetActive(true);
+                        intestinInHand.SetActive(false);
+                        break;
+                    case "colon_low":
+                        colonClean.SetActive(true);
+                        colonInHand.SetActive(false);
+                        break;
+                    case "heart":
+                        coeurClean.SetActive(true);
+                        coeurInHand.SetActive(false);
+                        break;
+                    case "estomac_V2":
+                        estomacClean.SetActive(true);
+                        estomacInHand.SetActive(false);
+                        break;
+                    case "rein_V2":
+                        rein1Clean.SetActive(true);
+                        rein1InHand.SetActive(false);
+                        break;
+                    case "rein_V2 (1)":
+                        rein2Clean.SetActive(true);
+                        rein2InHand.SetActive(false);
+                        break;
+                    case "poumon_unt":
+                        poumousClean.SetActive(true);
+                        poumousInHand.SetActive(false);
+                        break;
+                    default: break;
+                }
+                organeInHand = false;
+
+                handEmpty = true;
             }
         }
     }
