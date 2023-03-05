@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //win
-        if (organeChanged >= 8)
+        if (organeChanged >= 1)
         {
             uiController.Win();
         }
