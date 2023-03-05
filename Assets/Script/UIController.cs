@@ -17,7 +17,7 @@ public class UIController : MonoBehaviour
     public Animator playerLoose;
     public GameObject menu;
     public GameObject tutoriel;
-    public AudioSource tombe;
+    public AudioSource tombe, win;
     public PlayerController playerController;
     public GameObject defeat;
 
@@ -29,6 +29,8 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
+
+
 
         //Lose
         chronoText.text = "" + chrono;
@@ -81,5 +83,13 @@ public class UIController : MonoBehaviour
     {
         menu.SetActive(true);
         tutoriel.SetActive(false);
+    }
+
+
+
+    public void Win()
+    {
+        win.Play();
+
     }
 }

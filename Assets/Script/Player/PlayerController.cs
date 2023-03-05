@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     bool canTakeItem;
     GameObject itemInHand;
     bool organeInHand = false;
+    public UIController uiController;
 
     public AudioSource organeSound, takeScalpelSound, dropScalpelSound;
 
@@ -109,7 +110,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //win
+        if (organeChanged >= 8)
+        {
+            uiController.Win();
+        }
     }
 
     void OnClic()
