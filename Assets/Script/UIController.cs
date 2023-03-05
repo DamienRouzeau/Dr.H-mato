@@ -33,6 +33,10 @@ public class UIController : MonoBehaviour
         //Lose
         string text = chrono.ToString();
         string number = text.Substring(0, 2);
+        if (chrono <= 10)
+        {
+            number = text.Substring(0, 1);
+        }
         chronoText.text = number;
         if (chrono<= 0)
         {
