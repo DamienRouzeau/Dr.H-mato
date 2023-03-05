@@ -450,7 +450,7 @@ public class PlayerController : MonoBehaviour
                         rein1InHand.SetActive(false);
                         rein1InHandBool = false;
                         break;
-                    case "rein_V2 (1)":
+                    case "rein_V22":
                         rein2Clean.SetActive(true);
                         rein2InHand.SetActive(false);
                         rein2InHandBool = false;
