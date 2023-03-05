@@ -13,8 +13,11 @@ public class UIController : MonoBehaviour
     //float phaseflou1 = 45, phaseflou2 = 30, phaseflou3 = 15;
     public Text chronoText;
     public Animator animationFlou;
+    public Animator playerLoose;
     public GameObject menu;
     public GameObject tutoriel;
+    public AudioSource tombe;
+    public PlayerController playerController;
 
     void Start()
     {
@@ -24,13 +27,27 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
+        //Win
+        if (playerController.organeChanged >= 8)
+        {
+
+        }
+
+        //Lose
         chronoText.text = "" + chrono;
+        if (chrono<= 0)
+        {
+            playerLoose.SetBool("lose", true);
+            tombe.Play();
+        }
+
         if (UnityEngine.Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 0;
             menu.SetActive(true);
         }
+        
     }
 
     private void FixedUpdate()

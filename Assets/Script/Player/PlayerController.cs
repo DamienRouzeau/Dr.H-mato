@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
     public bool rein2fixe = true;
     public bool poumousfixe = true;
 
-    [SerializeField] int organeChanged = 0;
+    public int organeChanged = 0;
 
 
     // Start is called before the first frame update
