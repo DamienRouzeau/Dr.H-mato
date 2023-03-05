@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     bool organeInHand = false;
     public UIController uiController;
 
-    public AudioSource organeSound, takeScalpelSound, dropScalpelSound;
+    public AudioSource organeSound, takeScalpelSound, dropScalpelSound, win;
 
     //Organes
     public GameObject foie;
@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
     public int organeChanged = 0;
 
+    bool haveWin = false;
 
     // Start is called before the first frame update
     void Start()
@@ -111,8 +112,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //win
-        if (organeChanged >= 1)
+        if (organeChanged >= 1 && !haveWin)
         {
+            haveWin= true;
+            win.Play();
             uiController.Win();
         }
     }

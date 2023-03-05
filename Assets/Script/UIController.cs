@@ -89,8 +89,8 @@ public class UIController : MonoBehaviour
 
     public void Win()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         victory.SetActive(true);
         win.Play();
-
     }
 }
