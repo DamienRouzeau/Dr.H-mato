@@ -14,9 +14,11 @@ public class UIController : MonoBehaviour
     public Text chronoText;
     public Animator animationFlou;
     public GameObject menu;
+    public GameObject tutoriel;
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         chronoText.GetComponent<TextMeshPro>();
     }
 
@@ -25,6 +27,7 @@ public class UIController : MonoBehaviour
         chronoText.text = "" + chrono;
         if (UnityEngine.Input.GetKeyDown(KeyCode.Escape))
         {
+            Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 0;
             menu.SetActive(true);
         }
@@ -40,12 +43,26 @@ public class UIController : MonoBehaviour
 
     public void returnGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         menu.SetActive(false);
-        Time.timeScale = 0;
+        Time.timeScale = 1;
     }
 
     public void returnMenu()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
+    }
+
+    public void tuto()
+    {
+        menu.SetActive(false);
+        tutoriel.SetActive(true);
+    }
+
+    public void tutoMenu()
+    {
+        menu.SetActive(true);
+        tutoriel.SetActive(false);
     }
 }
