@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //win
-        if (organeChanged >= 1 && !haveWin)
+        if (organeChanged >= 8 && !haveWin)
         {
             haveWin= true;
             win.Play();
