@@ -36,6 +36,15 @@ public class PlayerController : MonoBehaviour
     public GameObject rein1InHand;
     public GameObject rein2InHand;
     public GameObject poumousInHand;
+    //Organes bool in hand
+    public bool foieInHandBool = false;
+    public bool intestinInHandBool = false;
+    public bool colonInHandBool = false;
+    public bool coeurInHandBool = false;
+    public bool estomacInHandBool = false;
+    public bool rein1InHandBool = false;
+    public bool rein2InHandBool = false;
+    public bool poumousInHandBool = false;
 
     //Organes clean
     public GameObject foieClean;
@@ -46,6 +55,16 @@ public class PlayerController : MonoBehaviour
     public GameObject rein1Clean;
     public GameObject rein2Clean;
     public GameObject poumousClean;
+
+    //Organes Trigger
+    public GameObject foieTrigger;
+    public GameObject intestinTrigger;
+    public GameObject colonTrigger;
+    public GameObject coeurTrigger;
+    public GameObject estomacTrigger;
+    public GameObject rein1Trigger;
+    public GameObject rein2Trigger;
+    public GameObject poumousTrigger;
 
     //Organes fixés
     public bool foiefixe = true;
@@ -61,7 +80,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
+
         scalpelInHand.SetActive(false);
         marteauInHAnd.SetActive(false);
         coeurInHand.SetActive(false);
@@ -72,6 +92,14 @@ public class PlayerController : MonoBehaviour
         foieInHand.SetActive(false);
         intestinInHand.SetActive(false);
         estomacInHand.SetActive(false);
+        poumousTrigger.SetActive(false);
+        coeurTrigger.SetActive(false);
+        rein1Trigger.SetActive(false);
+        rein2Trigger.SetActive(false);
+        colonTrigger.SetActive(false);
+        foieTrigger.SetActive(false);
+        intestinTrigger.SetActive(false);
+        estomacTrigger.SetActive(false);
 
     }
 
@@ -80,11 +108,16 @@ public class PlayerController : MonoBehaviour
     {
 
     }
-
-    public void Loose()
+    /*
+    public void UnlockCursor()
     {
-
+        Cursor.lockState = CursorLockMode.Confined;
     }
+
+    public void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }*/
 
     void OnClic()
     {
@@ -116,37 +149,51 @@ public class PlayerController : MonoBehaviour
                     switch (hitinfo.collider.name)
                     {
                         case "foie":
-                            print("test");
                             foieClean.SetActive(false);
                             foieInHand.SetActive(true);
+                            foieInHandBool = true;
                             break;
                         case "intestin_grelle_retopo":
                             intestinClean.SetActive(false);
                             intestinInHand.SetActive(true);
+                            intestinInHandBool = true;
+
                             break;
                         case "colon_low":
                             colonClean.SetActive(false);
                             colonInHand.SetActive(true);
+                            colonInHandBool = true;
+
                             break;
                         case "heart":
                             coeurClean.SetActive(false);
                             coeurInHand.SetActive(true);
+                            coeurInHandBool = true;
+
                             break;
                         case "estomac_V2":
                             estomacClean.SetActive(false);
                             estomacInHand.SetActive(true);
+                            estomacInHandBool = true;
+
                             break;
                         case "rein_V2":
                             rein1Clean.SetActive(false);
                             rein1InHand.SetActive(true);
+                            rein1InHandBool = true;
+
                             break;
                         case "rein_V2 (1)":
                             rein2Clean.SetActive(false);
                             rein2InHand.SetActive(true);
+                            rein2InHandBool = true;
+
                             break;
                         case "poumon_unt":
                             poumousClean.SetActive(false);
                             poumousInHand.SetActive(true);
+                            poumousInHandBool = true;
+
                             break;
                         default: break;
                     }
@@ -184,6 +231,12 @@ public class PlayerController : MonoBehaviour
                         default: break;
                     }
                 }
+                else if (hitinfo.collider.CompareTag("poumouTrigger") )
+                { }
+
+
+
+
             }
         }
         else
