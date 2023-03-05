@@ -12,6 +12,7 @@ public class menuController : MonoBehaviour
     public Animator animator;
     void Start()
     {
+        animator.SetTrigger("menu");
         Screen.SetResolution(1920, 1080, false);
         animator = GetComponent<Animator>();
     }

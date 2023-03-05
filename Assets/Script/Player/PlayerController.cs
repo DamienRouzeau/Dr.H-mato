@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     public GameObject rein2Trigger;
     public GameObject poumousTrigger;
 
-    //Organes fixés
+    //Organes fixï¿½s
     public bool foiefixe = true;
     public bool intestinfixe = true;
     public bool colonfixe = true;
@@ -82,8 +82,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-
         scalpelInHand.SetActive(false);
         marteauInHAnd.SetActive(false);
         coeurInHand.SetActive(false);
@@ -111,16 +109,6 @@ public class PlayerController : MonoBehaviour
     {
 
     }
-    /*
-    public void UnlockCursor()
-    {
-        Cursor.lockState = CursorLockMode.Confined;
-    }
-
-    public void LockCursor()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }*/
 
     void OnClic()
     {
