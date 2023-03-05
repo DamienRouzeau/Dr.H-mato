@@ -3011,6 +3011,7 @@ MonoBehaviour:
   rein1fixe: 1
   rein2fixe: 1
   poumousfixe: 1
+  organeChanged: 0
 --- !u!95 &730826617
 Animator:
   serializedVersion: 4
@@ -5347,17 +5348,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578923161}
-  m_LocalRotation: {x: 0.105442144, y: 0.1761185, z: -0.018977929, w: 0.9785214}
-  m_LocalPosition: {x: 0, y: 0, z: -23.7}
+  m_LocalRotation: {x: 0.05480847, y: 0.13915783, z: -0.086986154, w: 0.9849186}
+  m_LocalPosition: {x: 0, y: 0, z: -41.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 346226854}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 12.301, y: 20.406, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.595, y: 15.481, z: -9.06}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -633, y: -304}
+  m_AnchoredPosition: {x: -639.8, y: -316.4}
   m_SizeDelta: {x: 112.1464, y: 135.711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1578923163
@@ -5373,7 +5374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5381,12 +5382,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
+    m_Font: {fileID: 12800000, guid: a4f4895d04d3f434cac9375ce3f47080, type: 3}
+    m_FontSize: 110
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 100
+    m_MaxSize: 110
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
