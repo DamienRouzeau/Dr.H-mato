@@ -18,6 +18,7 @@ public class UIController : MonoBehaviour
     public GameObject tutoriel;
     public AudioSource tombe;
     public PlayerController playerController;
+    public Animator animate;
 
     void Start()
     {
@@ -27,11 +28,6 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        //Win
-        if (playerController.organeChanged >= 8)
-        {
-
-        }
 
         //Lose
         chronoText.text = "" + chrono;
@@ -39,6 +35,7 @@ public class UIController : MonoBehaviour
         {
             playerLoose.SetBool("lose", true);
             tombe.Play();
+            animate.SetTrigger("defeat");
         }
 
         if (UnityEngine.Input.GetKeyDown(KeyCode.Escape))
