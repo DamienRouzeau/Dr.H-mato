@@ -9,6 +9,15 @@ TagManager:
   - marteau
   - organe
   - os
+  - cleanOrganes
+  - poumonTrigger
+  - foieTrigger
+  - rein1Trigger
+  - rein2Trigger
+  - coeurTrigger
+  - colonTrigger
+  - intestinTrigger
+  - estomacTrigger
   layers:
   - Default
   - TransparentFX

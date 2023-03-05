@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c28c69de7d228bc4fb13c288d17e9999
+guid: faab478632094774ebd6e901b3edf1f3
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Male_hands
-    second: {fileID: 2100000, guid: 47699355cc4553a498eeed67e9c10f5c, type: 2}
+      name: light_mat
+    second: {fileID: 2100000, guid: bb3a164bb2c624a4bb7c43e95d14637c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal_marteau_mat
+    second: {fileID: 2100000, guid: 6b404fd71f853c845b58d3291ef17cf4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
