@@ -43,13 +43,11 @@ public class menuController : MonoBehaviour
 
     public void goTuto()
     {
-        menu.SetActive(false);
-        tuto.SetActive(true);
+        animator.SetTrigger("tuto");
     }
-    public void TtoM()
+    public void Suite()
     {
-        menu.SetActive(true);
-        tuto.SetActive(false);
+        animator.SetTrigger("next");
     }
 
     public void quit()
