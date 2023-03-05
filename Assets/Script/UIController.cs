@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,7 +19,7 @@ public class UIController : MonoBehaviour
     public GameObject tutoriel;
     public AudioSource tombe;
     public PlayerController playerController;
-    public Animator animate;
+    public GameObject defeat;
 
     void Start()
     {
@@ -33,9 +34,11 @@ public class UIController : MonoBehaviour
         chronoText.text = "" + chrono;
         if (chrono<= 0)
         {
+            Cursor.lockState = CursorLockMode.Confined;
             playerLoose.SetBool("lose", true);
             tombe.Play();
-            animate.SetTrigger("defeat");
+            defeat.SetActive(true);
+            Time.timeScale = 0;
         }
 
         if (UnityEngine.Input.GetKeyDown(KeyCode.Escape))
