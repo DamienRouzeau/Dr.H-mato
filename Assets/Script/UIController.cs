@@ -31,7 +31,9 @@ public class UIController : MonoBehaviour
     {
 
         //Lose
-        chronoText.text = "" + chrono;
+        string text = chrono.ToString();
+        string number = text.Substring(0, 2);
+        chronoText.text = number;
         if (chrono<= 0)
         {
             Cursor.lockState = CursorLockMode.Confined;
