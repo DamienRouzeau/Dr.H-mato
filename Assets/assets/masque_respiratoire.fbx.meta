@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c28c69de7d228bc4fb13c288d17e9999
+guid: a0a5fe6ed7ebd794c9cd8084bdd1fef7
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Male_hands
-    second: {fileID: 2100000, guid: 28ea2f83952e9ec4fa962e60ac147b18, type: 2}
+      name: PM3D_Cylinder3D1
+    second: {fileID: 2100000, guid: 9b4d24d8c95a1894fb6498fb81922cd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UMesh_PM3D_Cylinder3D54
+    second: {fileID: 2100000, guid: 9b4d24d8c95a1894fb6498fb81922cd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UMesh_PM3D_Sphere3D_3
+    second: {fileID: 2100000, guid: 9b4d24d8c95a1894fb6498fb81922cd0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

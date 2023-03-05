@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: c28c69de7d228bc4fb13c288d17e9999
+guid: c6f8e704aaba8f444a606cc9fdc9cb26
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Male_hands
-    second: {fileID: 2100000, guid: 28ea2f83952e9ec4fa962e60ac147b18, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
