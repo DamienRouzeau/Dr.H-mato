@@ -21,6 +21,7 @@ public class UIController : MonoBehaviour
     public PlayerController playerController;
     public GameObject defeat;
     public GameObject victory;
+    bool haveLoose;
 
     void Start()
     {
@@ -37,14 +38,20 @@ public class UIController : MonoBehaviour
         {
             number = text.Substring(0, 1);
         }
-        chronoText.text = number;
-        if (chrono<= 0)
+        else if (chrono <= 0) 
         {
+            number = text.Substring(0, 0);
+
+        }
+        chronoText.text = number;
+        if (chrono<= 0 && !haveLoose)
+        {
+            haveLoose= true;
             Cursor.lockState = CursorLockMode.Confined;
             playerLoose.SetBool("lose", true);
             tombe.Play();
             defeat.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 1;
         }
 
         if (UnityEngine.Input.GetKeyDown(KeyCode.Escape))
